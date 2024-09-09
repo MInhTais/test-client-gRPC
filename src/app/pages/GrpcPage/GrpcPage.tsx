@@ -34,6 +34,10 @@ export default function GrpcPage() {
         mutationFn: (id: string) => greetingService.getById(id)
     })
 
+    const updateMutation = useMutation({
+        mutationFn: ({ id, name }: { id: string; name: string }) => greetingService.update(id, { name })
+    })
+
     // Get all greetings
 
     const { data } = useQuery<GreetingReply[]>({
@@ -41,10 +45,6 @@ export default function GrpcPage() {
         queryFn: async () => {
             return greetingService.getAll()
         }
-    })
-
-    const updateMutation = useMutation({
-        mutationFn: ({ id, name }: { id: string; name: string }) => greetingService.update(id, { name })
     })
 
     // Handle add greeting
