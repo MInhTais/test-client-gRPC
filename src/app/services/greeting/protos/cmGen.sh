@@ -10,8 +10,6 @@ protoc -I=./src/app/protos ./src/app/protos/greeting.proto \
 
 
 # gen 
-# protoc -I=./src/app/protos ./src/app/protos/greeting.proto \
-#   --js_out=import_style=commonjs:./src/app/services/test/protos \
-#   --grpc-web_out=import_style=typescript,mode=grpcwebtext:./src/app/services/test/protos
-
-#test
+protoc -I=./src/app/protos ./src/app/protos/degreeCatalogCommand.proto \
+  --js_out=import_style=commonjs:./src/app/services/command/protos \
+  --grpc-web_out=import_style=typescript,mode=grpcwebtext:./src/app/services/command/protos

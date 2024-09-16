@@ -16,6 +16,7 @@ export const greetingService = {
         const request = new ReadGreetingsRequest()
 
         const response = await client.readGreetings(request, {})
+        console.log(response)
 
         return response.getGreetingsList()
     },

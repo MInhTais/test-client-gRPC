@@ -3,6 +3,8 @@ import Error404 from '../errors/Error404'
 import HelloTestPage from '../pages/HelloTestPage'
 import HomeTestPage from '../pages/HomeTestPage'
 import GrpcPage from '../pages/GrpcPage'
+import DegreeCatalogPage from '../pages/DegreeCatalogPage'
+
 export const AppRouter = () => {
     return useRoutes([
         {
@@ -19,7 +21,11 @@ export const AppRouter = () => {
         },
         {
             path: '/',
-            element: <GrpcPage />
+            element: <DegreeCatalogPage />
+        },
+        {
+            path: '/query',
+            element: <DegreeCatalogPage />
         },
         {
             path: '*',
