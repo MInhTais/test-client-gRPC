@@ -92,7 +92,7 @@ export default function DegreeCatalogPage() {
 
         getByIdMutation.mutateAsync(id, {
             onSuccess: async () => {
-                const { DegName } = await fetchData<DegreesType>(() => queryService.getById(id), id)
+                const { DegName } = await fetchData<DegreesType>(() => queryService.getById(id))
                 setValueEdit(DegName)
                 setOpenEdit(true)
             },
